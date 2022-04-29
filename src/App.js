@@ -8,6 +8,7 @@ import NotFound from './pages/NotFound/NotFound';
 import { Route, Routes } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Inventory from './pages/Inventory/Inventory';
+import Blogs from './pages/Blogs/Blogs';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/" element={<Home/>}></Route>
         <Route path="/login" element={<Login/>}></Route>
         <Route path="/register" element={<Register/>}></Route>
+        <Route path="/blogs" element={<Blogs/>}></Route>
         <Route path="/inventory/:id" element={<Inventory/>}></Route>
         <Route path="*" element={<NotFound/>}></Route>
       </Routes>
