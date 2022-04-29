@@ -34,3 +34,15 @@ p {
 p {
   margin-bottom: 0 !important;
 }
+
+.title {
+  text-align: center;
+  padding-bottom: 40px;
+}
+
+.title h2 {
+  font-size: 32px;
+  line-height: 48px;
+  color: #024d8e;
+  font-weight: 600;
+}

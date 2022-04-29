@@ -1,0 +1,19 @@
+.manage .manage-bg {
+    background-image: url(../../../images/manage.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 100px 0;
+}
+
+.manage button {
+    font-size: 18px;
+    line-height: 40px;
+    font-weight: 600;
+    color: #fff;
+    background-color: #024d8e;
+    padding: 0 30px;
+    display: inline-block;
+    border: 0;
+    outline: none;
+}
