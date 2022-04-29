@@ -9,6 +9,8 @@ import { Route, Routes } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Inventory from './pages/Inventory/Inventory';
 import Blogs from './pages/Blogs/Blogs';
+import ManageInventory from './pages/ManageInventory/ManageInventory';
+import AddItem from './pages/AddItem/AddItem';
 
 function App() {
   return (
@@ -19,6 +21,8 @@ function App() {
         <Route path="/login" element={<Login/>}></Route>
         <Route path="/register" element={<Register/>}></Route>
         <Route path="/blogs" element={<Blogs/>}></Route>
+        <Route path="/manage" element={<ManageInventory/>}></Route>
+        <Route path="/add" element={<AddItem/>}></Route>
         <Route path="/inventory/:id" element={<Inventory/>}></Route>
         <Route path="*" element={<NotFound/>}></Route>
       </Routes>
