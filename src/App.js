@@ -7,6 +7,7 @@ import Register from './pages/Login/Register/Register';
 import NotFound from './pages/NotFound/NotFound';
 import { Route, Routes } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Inventory from './pages/Inventory/Inventory';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/" element={<Home/>}></Route>
         <Route path="/login" element={<Login/>}></Route>
         <Route path="/register" element={<Register/>}></Route>
+        <Route path="/inventory/:id" element={<Inventory/>}></Route>
         <Route path="*" element={<NotFound/>}></Route>
       </Routes>
       <Footer/>
