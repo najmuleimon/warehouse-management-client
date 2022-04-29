@@ -1,0 +1,26 @@
+footer {
+    background-color: #024d8e;
+    color: #fff;
+    padding: 20px 0;
+}
+
+footer ul li {
+    padding: 0 10px;
+}
+
+footer ul li a {
+    display: inline-block;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 400;
+    text-transform: capitalize;
+}
+
+footer ul li a:hover {
+    color: #fff;
+}
+
+footer p {
+    font-size: 16px;
+    font-weight: 400;
+}

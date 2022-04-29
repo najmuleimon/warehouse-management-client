@@ -1,0 +1,22 @@
+header .navbar-brand img {
+    height: 50px;
+}
+
+header .navbar {
+    padding: 0;
+}
+
+header .nav-link {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: #024d8e !important;
+    padding: 0 10px !important;
+    border: 0;
+    background-color: transparent;
+    outline: none;
+}
+
+header .active-link {
+    color: #01a9fc !important;
+}

@@ -1,0 +1,34 @@
+.banner {
+    background-image: url(../../../images/banner.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 200px 0;
+}
+
+.banner h1 {
+    font-size: 40px;
+    font-weight: 600;
+    color: #024d8e;
+}
+
+.banner p {
+    font-size: 18px;
+    font-weight: 400;
+    color: #222;
+    padding-top: 20px;
+    padding-bottom: 30px;
+}
+
+
+.banner button {
+    font-size: 18px;
+    line-height: 40px;
+    font-weight: 600;
+    color: #fff;
+    background-color: #024d8e;
+    padding: 0 30px;
+    display: inline-block;
+    border: 0;
+    outline: none;
+}
