@@ -1,9 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { Form } from 'react-bootstrap';
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import auth from '../../../firebase.init';
 import Loading from '../../Shared/Loading/Loading';
+import SocialLogin from '../SocialLogin/SocialLogin';
+import login from '../../../images/login.jpg';
+import './Login.css';
 
 const Login = () => {
     const [userInfo, setUserInfo] = useState({
@@ -17,9 +21,9 @@ const Login = () => {
     const [ signInWithEmailAndPassword, user, loading, signInError ] = useSignInWithEmailAndPassword(auth);
     const [sendPasswordResetEmail, sending, resetPassError] = useSendPasswordResetEmail(auth);
     const navigate = useNavigate();
-    // const location = useLocation();
+    const location = useLocation();
 
-    // let from = location.state?.from?.pathname || "/";
+    let from = location.state?.from?.pathname || "/";
 
     useEffect(() => {
         if(loading || sending){
@@ -64,14 +68,20 @@ const Login = () => {
     useEffect(() => {
         if(signInError){
             setErrors({...errors, general: signInError.message});
+            toast.error("Login Failed!!",{
+                theme: "colored"
+            });
         }
     }, [signInError])
 
-    // useEffect(() => {
-    //     if(user){
-    //         navigate(from, { replace: true });
-    //     }
-    // }, [user])
+    useEffect(() => {
+        if(user){
+            navigate(from, { replace: true });
+                toast.info("Logged in successfully!!",{
+                    theme: "colored"
+                });
+        }
+    }, [user])
     
     // handle reset password
     const handleForgetPass = async () => {
@@ -86,14 +96,21 @@ const Login = () => {
 
     useEffect(() => {
         if(resetPassError){
-            setErrors({...errors, general: resetPassError.message})
+            setErrors({...errors, general: resetPassError.message});
+            toast.error("Can not reset password!!",{
+                theme: "colored"
+            });
         }
     }, [resetPassError])
     return (
         <div className='register'>
             <div className="container">
-                <div className="row">
-                    <div className="col-lg-6"></div>
+                <div className="row align-items-center">
+                    <div className="col-lg-6">
+                        <div className="img">
+                            <img src={login} alt="" />
+                        </div>
+                    </div>
                     <div className="col-lg-6">
                         <div className="main-form">
                             <Form className='text-start' onSubmit={handleLogin}>
@@ -108,19 +125,15 @@ const Login = () => {
                                     <Form.Control type="password" placeholder="Password" name="password" required onChange={handlePassword}/>
                                     {errors?.password && <p className='error-msg'>{errors.password}</p>}
                                 </Form.Group>
-                                <button type="submit" className='submit-btn'>
+                                <button type="submit" className='btn-style'>
                                     Login
                                 </button>
                             </Form>
                             {errors?.general && <p className='error-msg'>{errors.general}</p>}
 
                             <button className='forget-pass' onClick={handleForgetPass}>Forget Password?</button>
-                            <p>New to Muscle Magic? <Link to="/register">Create New Account</Link></p>
-                            <div className="divider d-flex align-items-center">
-                                <div className="w-50"></div>
-                                <span>or</span>
-                                <div className="w-50"></div>
-                            </div>
+                            <p className='agree'>New to Pro Tech? <Link to="/signup">Create New Account</Link></p>
+                            <SocialLogin/>
                         </div>
                     </div>
                 </div>

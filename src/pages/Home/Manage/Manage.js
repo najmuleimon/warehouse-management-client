@@ -8,7 +8,7 @@ const Manage = () => {
                 <div className="row">
                     <div className="col-lg-12">
                         <div className="manage-bg text-center">
-                            <button>Manage Inventories</button>
+                            <button className='btn-style'>Manage Inventories</button>
                         </div>
                     </div>
                 </div>

@@ -15,7 +15,7 @@ const Category = () => {
                             <div className="content">
                                 <h3>Gaming Console</h3>
                                 <p>All the gaming products and accessories.</p>
-                                <button>Manage Products</button>
+                                <button className='btn-style'>Manage Products</button>
                             </div>
                         </div>
                     </div>
@@ -25,7 +25,7 @@ const Category = () => {
                             <div className="content">
                                 <h3>House Entertainment</h3>
                                 <p>All the home entertainment products and accessories.</p>
-                                <button>Manage Products</button>
+                                <button className='btn-style'>Manage Products</button>
                             </div>
                         </div>
                     </div>
@@ -35,7 +35,7 @@ const Category = () => {
                             <div className="content">
                                 <h3>Laptop Computer</h3>
                                 <p>All brand laptops and laptop accessories</p>
-                                <button>Manage Products</button>
+                                <button className='btn-style'>Manage Products</button>
                             </div>
                         </div>
                     </div>

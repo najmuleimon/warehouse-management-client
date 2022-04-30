@@ -46,3 +46,24 @@ p {
   color: #024d8e;
   font-weight: 600;
 }
+
+.btn-style {
+  font-size: 18px;
+  line-height: 40px;
+  font-weight: 600;
+  color: #fff;
+  background-image: linear-gradient(to bottom, #024d8e, #01a9fc);
+  padding: 0 30px;
+  display: inline-block;
+  border: 0;
+  outline: none;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.btn-style:hover {
+  background-image: linear-gradient(to bottom, #01a9fc, #024d8e);
+}

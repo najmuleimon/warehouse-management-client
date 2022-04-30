@@ -10,12 +10,12 @@ const SingleProduct = ({product}) => {
             <div className="card">
                 <img src={img} className="card-img-top" alt="..."/>
                 <div className="card-body">
-                    <h5 className="card-title">{name}</h5>
+                    <h3 className="card-title">{name}</h3>
                     <h4>Price: ${price}</h4>
                     <h5>Quantity: {quantity}</h5>
                     <h5>Supplier: {supplierName}</h5>
                     <p className="card-text">{description}</p>
-                    <button onClick={() => navigate(`/inventory/${id}`)}>manage</button>
+                    <button onClick={() => navigate(`/inventory/${id}`)} className="btn-style">Manage</button>
                 </div>
             </div>
         </div>

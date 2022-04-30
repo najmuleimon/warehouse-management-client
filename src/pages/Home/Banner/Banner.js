@@ -9,7 +9,7 @@ const Banner = () => {
                     <div className="col-lg-6">
                         <h1>The biggest warehouse in the City</h1>
                         <p>Manage inventory easily by just a single click.</p>
-                        <button>Manage Inventories</button>
+                        <button className='btn-style'>Manage Inventories</button>
                     </div>
                 </div>
             </div>

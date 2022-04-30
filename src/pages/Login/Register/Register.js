@@ -4,6 +4,10 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 import Loading from '../../Shared/Loading/Loading';
+import SocialLogin from '../SocialLogin/SocialLogin';
+import { toast } from 'react-toastify';
+import signup from '../../../images/signup.jpg';
+import './Register.css';
 
 const Register = () => {
     const [userInfo, setUserInfo] = useState({
@@ -27,6 +31,9 @@ const Register = () => {
     useEffect(() => {
         if(createError){
             setErrors({...errors, general: createError.message});
+            toast.error("Registration Failed!!",{
+                theme: "colored"
+            });
         }
     }, [createError]);
 
@@ -88,14 +95,19 @@ const Register = () => {
     useEffect(() => {
         if(user){
             navigate('/');
+            toast.info("Account created successfully!!",{
+                theme: "colored"
+            });
         }
     }, [user])
     return (
         <div className='register'>
             <div className="container">
-                <div className="row">
+                <div className="row align-items-center">
                     <div className="col-lg-6">
-
+                        <div className="img">
+                            <img src={signup} alt="" />
+                        </div>
                     </div>
                     <div className="col-lg-6">
                         <div className="main-form">
@@ -126,18 +138,14 @@ const Register = () => {
                                     <Form.Check type="checkbox" label="I agree the Terms and Conditions" name="terms" />
                                     {errors?.agree && <p className='error-msg'>{errors.agree}</p>}
                                 </Form.Group>
-                                <button type="submit" className='submit-btn'>
+                                <button type="submit" className='btn-style'>
                                     Sign up
                                 </button>
                             </Form>
                             {errors?.general && <p className='error-msg'>{errors.general}</p>}
 
-                            <p>Already have an account? <Link to="/login">Login</Link></p>
-                            <div className="divider d-flex align-items-center">
-                                <div className="w-50"></div>
-                                <span>or</span>
-                                <div className="w-50"></div>
-                            </div>
+                            <p className='agree'>Already have an account? <Link to="/login">Login</Link></p>
+                            <SocialLogin/>
                         </div>
                     </div>
                 </div>

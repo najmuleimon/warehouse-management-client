@@ -1,3 +1,30 @@
 .card {
     margin-bottom: 25px;
+    border: 1px solid #01a9fc !important;
+    box-sizing: border-box;
+}
+
+.card h3 {
+    font-size: 22px;
+    font-weight: 600;
+    color: #024d8e;
+}
+
+.card h4 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #01a9fc;
+}
+
+.card h5 {
+    font-size: 18px;
+    font-weight: 500;
+    color: #222;
+}
+
+.card p {
+    font-size: 16px;
+    font-weight: 400;
+    color: #777777;
+    padding: 10px 0 20px;
 }
