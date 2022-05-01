@@ -1,3 +1,7 @@
 .single-inventory {
     padding: 60px 0;
 }
+
+.single-inventory .image img {
+    width: 100%;
+}

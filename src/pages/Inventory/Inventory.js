@@ -12,7 +12,7 @@ const Inventory = () => {
     // handle deliver item
     const handleDelivery = () => {
         let quantity = JSON.parse(product.quantity);
-        let newQuantity = JSON.stringify(quantity - 1);
+        let newQuantity = quantity - 1;
 
         const url = `http://localhost:5000/product/${id}`;
         console.log(url);
@@ -26,7 +26,6 @@ const Inventory = () => {
         .then(res=> res.json())
         .then(data =>{
             console.log(data);
-            setProduct({...product});
         });
     }
 
@@ -49,7 +48,6 @@ const Inventory = () => {
         .then(res=> res.json())
         .then(data =>{
             console.log(data);
-            setProduct({...product});
             e.target.reset();
         });
     }

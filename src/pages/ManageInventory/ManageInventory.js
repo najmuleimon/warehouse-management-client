@@ -27,6 +27,11 @@ const ManageInventory = () => {
             <div className="container">
                 <div className="row">
                     <div className="col-lg-12">
+                        <div className="d-flex justify-content-end">
+                            <button onClick={() => navigate('/add')} className="btn-style">Add new Item</button>
+                        </div>
+                    </div>
+                    <div className="col-lg-12">
                         <h2>Manage Products</h2>
                         
                         <table className="table table-striped">
