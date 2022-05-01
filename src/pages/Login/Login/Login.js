@@ -77,9 +77,9 @@ const Login = () => {
     useEffect(() => {
         if(user){
             navigate(from, { replace: true });
-                toast.info("Logged in successfully!!",{
-                    theme: "colored"
-                });
+            toast.info("Logged in successfully!!",{
+                theme: "colored"
+            });
         }
     }, [user])
     
