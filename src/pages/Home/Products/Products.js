@@ -5,7 +5,6 @@ import './Products.css';
 
 const Products = () => {
     const [products] = useProducts();
-    console.log(products);
     return (
         <div className='products'>
             <div className="container">
