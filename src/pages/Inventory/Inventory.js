@@ -13,15 +13,15 @@ const Inventory = () => {
     const handleDelivery = () => {
         let quantity = JSON.parse(product.quantity);
         let newQuantity = quantity - 1;
+        setProduct({...product, quantity: newQuantity})
 
         const url = `http://localhost:5000/product/${id}`;
-        console.log(url);
         fetch(url, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify({...product, quantity: newQuantity})
+            body: JSON.stringify({quantity: newQuantity})
         })
         .then(res=> res.json())
         .then(data =>{
@@ -35,6 +35,7 @@ const Inventory = () => {
         let quantity = JSON.parse(product.quantity)
         let givenQuantity = parseInt(e.target.prodQuantity.value);
         let newQuantity = quantity + givenQuantity;
+        setProduct({...product, quantity: newQuantity})
         
         const url = `http://localhost:5000/product/${id}`;
         console.log(url);
@@ -43,7 +44,7 @@ const Inventory = () => {
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify({...product, quantity: newQuantity})
+            body: JSON.stringify({quantity: newQuantity})
         })
         .then(res=> res.json())
         .then(data =>{

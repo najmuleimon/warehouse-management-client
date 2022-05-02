@@ -1,13 +1,19 @@
 import React from 'react';
 import { Form } from 'react-bootstrap';
 import axios from 'axios';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import './AddItem.css';
+import { toast } from 'react-toastify';
+import auth from '../../firebase.init';
 
 const AddItem = () => {
+    const [user] = useAuthState(auth);
+
     const handleAddProduct = async (event) => {
         event.preventDefault();
 
         const product = {
+            email: user.email,
             name : event.target.proName.value,
             category : event.target.category.value,
             image : event.target.imgLink.value,
@@ -17,14 +23,18 @@ const AddItem = () => {
             description : event.target.description.value
         }
 
-        try{
-            const url = "http://localhost:5000/upload/";
-            const {data} = await axios.post(url, product);
-            console.log(data);
-        }
-        catch(error){
-
-        }
+        
+        const url = "http://localhost:5000/upload/";
+        axios.post(url, product)
+        .then(response =>{
+            const {data} = response;
+            if(data.insertedId){
+                toast.info("Product added successfully!!",{
+                    theme: "colored"
+                });
+                event.target.reset();
+            }
+        })
     }
     return (
         <div className='add-item'>
