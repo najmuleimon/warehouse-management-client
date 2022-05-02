@@ -41,6 +41,7 @@ const ManageInventory = () => {
                                 <th scope="col">Product Name</th>
                                 <th scope="col">Product Id</th>
                                 <th scope="col">Category</th>
+                                <th scope="col">Quantity</th>
                                 <th scope="col">Price</th>
                                 <th scope="col">Update</th>
                                 <th scope="col">Delete</th>
@@ -53,13 +54,14 @@ const ManageInventory = () => {
                                     <td><h6>{product.name}</h6></td>
                                     <td><p>{product._id}</p></td>
                                     <td><h6>{product.category}</h6></td>
+                                    <td><h6>{product.quantity}</h6></td>
                                     <td><h6>{product.price}</h6></td>
                                     <td><button onClick={() => navigate(`/inventory/${product._id}`)} className='btn btn-info'>Update</button></td>
                                     <td><button onClick={() => handleDelete(product._id)} className='btn btn-danger'>Delete</button></td>
                                 </tr>)
                             }
                             </tbody>
-                            </table>
+                        </table>
                     </div>
                 </div>
             </div>
