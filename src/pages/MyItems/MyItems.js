@@ -16,6 +16,8 @@ const MyItems = () => {
         // axios
         const getMyProducts = async() =>{
             const email = user.email;
+            console.log(user);
+            console.log(email);
             const url = `http://localhost:5000/my-product?email=${email}`;
 
             try{
@@ -26,6 +28,10 @@ const MyItems = () => {
                 });
                 setMyProducts(data);
             }
+            // try{
+            //     const {data} = await axios.get(url);
+            //     setMyProducts(data);
+            // }
             catch(error){
                 console.log(error.message);
                 if(error.response.status === 401 || error.response.status === 403){
