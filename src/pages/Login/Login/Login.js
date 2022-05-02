@@ -8,6 +8,7 @@ import Loading from '../../Shared/Loading/Loading';
 import SocialLogin from '../SocialLogin/SocialLogin';
 import login from '../../../images/login.jpg';
 import './Login.css';
+import axios from 'axios';
 
 const Login = () => {
     const [userInfo, setUserInfo] = useState({
@@ -60,9 +61,18 @@ const Login = () => {
     }
 
     // handle login
-    const handleLogin = (event) => {
+    const handleLogin = async event => {
         event.preventDefault();
-        signInWithEmailAndPassword(userInfo.email, userInfo.password);
+        const email = userInfo.email;
+        const password = userInfo.password;
+        await signInWithEmailAndPassword(email, password);
+
+        const {data} = await axios.post('http://localhost:5000/login', {email});
+        localStorage.setItem('accessToken', data.accessToken);
+        navigate(from, { replace: true });
+        toast.info("Logged in successfully!!",{
+            theme: "colored"
+        });
     }
 
     useEffect(() => {
@@ -73,15 +83,6 @@ const Login = () => {
             });
         }
     }, [signInError])
-
-    useEffect(() => {
-        if(user){
-            navigate(from, { replace: true });
-            toast.info("Logged in successfully!!",{
-                theme: "colored"
-            });
-        }
-    }, [user])
     
     // handle reset password
     const handleForgetPass = async () => {
