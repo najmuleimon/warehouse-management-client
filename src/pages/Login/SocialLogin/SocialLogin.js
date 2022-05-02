@@ -19,17 +19,17 @@ const SocialLogin = () => {
     useEffect(() => {
         if(user){
             const email = user.email;
-            console.log(user);
-            console.log(email);
             axios.post('http://localhost:5000/login', {email})
             .then(data => {
                 localStorage.setItem('accessToken', data.data.accessToken);
                 navigate(from, { replace: true });
-                toast.info("Logged in successfully!!",{
-                    theme: "colored"
-                });
-            })
-            
+                
+            }); 
+        }
+        if(googleUser){
+            toast.info("Logged in successfully!!",{
+                theme: "colored"
+            });
         }
     }, [user])
     

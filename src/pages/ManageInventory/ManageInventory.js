@@ -1,17 +1,24 @@
+import axios from 'axios';
+import { signOut } from 'firebase/auth';
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import auth from '../../firebase.init';
 import useAllProducts from '../../hooks/useAllProducts';
 import './ManageInventory.css';
 
 const ManageInventory = () => {
     const [allProducts, setAllProducts] = useAllProducts();
+    const [user] = useAuthState(auth);
     const navigate = useNavigate();
     let count = 1;
 
     const handleDelete = id => {
         const proceed = window.confirm('Are you sure?');
+        const email = user.email;
         if(proceed){
-            const url = `http://localhost:5000/product/${id}`;
+            const url = `http://localhost:5000/product/${id}?email=${email}`;
             fetch(url, {
                 method: 'DELETE'
             })
@@ -19,8 +26,12 @@ const ManageInventory = () => {
             .then(data => {
                 const remaining = allProducts.filter(product => product._id !== id);
                 setAllProducts(remaining);
-            })
+                toast.info("Deleted Successfully!",{
+                    theme: "colored"
+                });
+            });
         }
+        
     }
     return (
         <div className='manage-product'>
