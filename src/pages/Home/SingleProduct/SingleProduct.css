@@ -4,26 +4,34 @@
     box-sizing: border-box;
 }
 
+.card img {
+    padding: 30px;
+}
+
 .card h3 {
     font-size: 22px;
+    line-height: 32px;
     font-weight: 600;
     color: #024d8e;
 }
 
 .card h4 {
     font-size: 24px;
+    line-height: 36px;
     font-weight: 600;
     color: #01a9fc;
 }
 
 .card h5 {
     font-size: 18px;
+    line-height: 26px;
     font-weight: 500;
     color: #222;
 }
 
 .card p {
     font-size: 16px;
+    line-height: 24px;
     font-weight: 400;
     color: #777777;
     padding: 10px 0 20px;

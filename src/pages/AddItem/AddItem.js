@@ -41,6 +41,9 @@ const AddItem = () => {
             <div className="container">
                 <div className="row">
                     <div className="col-lg-12">
+                        <div className="title">
+                            <h2>Add New Product</h2>
+                        </div>
                         <Form className='text-start' onSubmit={handleAddProduct}>
                             <Form.Group className="mb-3">
                                 <Form.Label>Product Name</Form.Label>
@@ -48,7 +51,7 @@ const AddItem = () => {
                             </Form.Group>
                             <Form.Group className="mb-3">
                                 <Form.Label>Category</Form.Label>
-                                <Form.Control type="text" placeholder="category" name="category" required/>
+                                <Form.Control type="text" placeholder="Category" name="category" required/>
                             </Form.Group>
 
                             <Form.Group className="mb-3">

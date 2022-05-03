@@ -1,11 +1,11 @@
-import axios from 'axios';
-import { signOut } from 'firebase/auth';
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
 import useAllProducts from '../../hooks/useAllProducts';
+import {BsTrash} from 'react-icons/bs';
+import {BiAddToQueue} from 'react-icons/bi';
 import './ManageInventory.css';
 
 const ManageInventory = () => {
@@ -38,41 +38,44 @@ const ManageInventory = () => {
             <div className="container">
                 <div className="row">
                     <div className="col-lg-12">
-                        <div className="d-flex justify-content-end">
-                            <button onClick={() => navigate('/add')} className="btn-style">Add new Item</button>
+                        <div className="d-flex justify-content-end btn-area">
+                            <button onClick={() => navigate('/add')} className="btn-style">Add new Item <BiAddToQueue className='icon'/></button>
                         </div>
                     </div>
                     <div className="col-lg-12">
-                        <h2>Manage Products</h2>
-                        
-                        <table className="table table-striped">
-                            <thead>
-                                <tr>
-                                <th scope="col">Serial</th>
-                                <th scope="col">Product Name</th>
-                                <th scope="col">Product Id</th>
-                                <th scope="col">Category</th>
-                                <th scope="col">Quantity</th>
-                                <th scope="col">Price</th>
-                                <th scope="col">Update</th>
-                                <th scope="col">Delete</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                            {
-                                allProducts.map(product => <tr key={product._id}>
-                                    <td>{count++}</td>
-                                    <td><h6>{product.name}</h6></td>
-                                    <td><p>{product._id}</p></td>
-                                    <td><h6>{product.category}</h6></td>
-                                    <td><h6>{product.quantity}</h6></td>
-                                    <td><h6>{product.price}</h6></td>
-                                    <td><button onClick={() => navigate(`/inventory/${product._id}`)} className='btn btn-info'>Update</button></td>
-                                    <td><button onClick={() => handleDelete(product._id)} className='btn btn-danger'>Delete</button></td>
-                                </tr>)
-                            }
-                            </tbody>
-                        </table>
+                        <div className="title">
+                            <h2>Manage Products</h2>
+                        </div>
+                        <div className="table-responsive">
+                            <table className="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Serial</th>
+                                        <th scope="col">Product Name</th>
+                                        <th scope="col">Product Id</th>
+                                        <th scope="col">Category</th>
+                                        <th scope="col">Quantity</th>
+                                        <th scope="col">Price</th>
+                                        <th scope="col">Update</th>
+                                        <th scope="col">Delete</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                {
+                                    allProducts.map(product => <tr key={product._id}>
+                                        <td>{count++}</td>
+                                        <td>{product.name}</td>
+                                        <td>{product._id}</td>
+                                        <td>{product.category}</td>
+                                        <td>{product.quantity}</td>
+                                        <td>{product.price}</td>
+                                        <td><button onClick={() => navigate(`/inventory/${product._id}`)} className='btn btn-info text-white'>Update</button></td>
+                                        <td><button onClick={() => handleDelete(product._id)} className='btn btn-danger'><BsTrash/></button></td>
+                                    </tr>)
+                                }
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>

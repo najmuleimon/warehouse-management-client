@@ -1,10 +1,13 @@
 .category {
-    padding: 60px 0;
+    padding-top: 60px;
+    padding-bottom: 35px;
 }
 
 .category .category-inner {
     position: relative;
     overflow: hidden;
+    height: auto;
+    margin-bottom: 25px;
 }
 
 .category .category-inner img {
@@ -14,6 +17,7 @@
     -moz-transition: all linear 0.3s;
     -ms-transition: all linear 0.3s;
     -o-transition: all linear 0.3s;
+    height: 100%;
 }
 
 .category .category-inner:hover img {
@@ -32,6 +36,10 @@
     height: 100%;
     padding: 40px;
     background: rgba(0, 0, 0, 0.1);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .category h3 {
@@ -43,6 +51,26 @@
 .category p {
     font-size: 16px;
     font-weight: 400;
-    color: #777777;
+    color: #222;
     padding: 10px 0 20px;
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+    .category h3 {
+        font-size: 20px;
+    }
+
+    .category .content {
+        padding: 10px 20px;
+    }
+
+    .category p {
+        padding: 5px 0 10px;
+    }
+}
+
+@media (min-width: 320px) and (max-width: 575px) {
+    .category h3 {
+        font-size: 20px;
+    }
 }

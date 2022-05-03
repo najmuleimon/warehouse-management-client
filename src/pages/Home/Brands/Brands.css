@@ -1,5 +1,5 @@
 .brands {
-    padding-bottom: 60px;
+    padding-bottom: 35px;
 }
 
 .brands .item {
@@ -10,6 +10,7 @@
     -moz-transition: all linear 0.3s;
     -ms-transition: all linear 0.3s;
     -o-transition: all linear 0.3s;
+    margin-bottom: 25px;
 }
 
 .brands .item:hover {

@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import { Form } from 'react-bootstrap';
 import { useNavigate, useParams } from 'react-router-dom';
 import useProduct from '../../hooks/useProduct';
@@ -11,6 +11,7 @@ const Inventory = () => {
 
     // handle deliver item
     const handleDelivery = () => {
+        console.log(product.quantity);
         let quantity = JSON.parse(product.quantity);
         let newQuantity = quantity - 1;
         setProduct({...product, quantity: newQuantity})
@@ -57,39 +58,41 @@ const Inventory = () => {
             <div className="container">
                 <div className="row align-items-center">
                     <div className="col-lg-12">
-                        <div className="d-flex justify-content-end">
+                        <div className="d-flex justify-content-end btn-area">
                             <button onClick={() => navigate('/manage')} className="btn-style">Manage Inventories</button>
                         </div>
                     </div>
-                    <div className="col-lg-6">
+                    <div className="col-lg-5 col-md-6">
                         <div className="image">
                             <img src={product.image} alt="" />
                         </div>
                     </div>
-                    <div className="col-lg-6">
+                    <div className="col-lg-7 col-md-6">
                         <div className="single">
-                            <h3>Product Id: {product._id}</h3>
-                            <h3>Name: {product.name}</h3>
-                            <h3>Category: {product.category}</h3>
-                            <h3>Price: ${product.price}</h3>
-                            <p>Details: {product.description}</p>
-                            <h3>Supplier: {product.supplier}</h3>
-                            <h3>Quantity: {product.quantity}</h3>
-                            <h3>{product.quantity > 0 ? "on sale" : "sold"}</h3>
+                            <h3><span>Product Id:</span> {product._id}</h3>
+                            <h3><span>Name:</span> {product.name}</h3>
+                            <h4><span>Category:</span> {product.category}</h4>
+                            <h4><span>Price:</span> ${product.price}</h4>
+                            <p><span>Details:</span> {product.description}</p>
+                            <h4><span>Supplier:</span> {product.supplier}</h4>
+                            <h4><span>Quantity:</span> {product.quantity}</h4>
+                            <h4>{product.quantity > 0 ? "on sale" : "sold"}</h4>
                             <button onClick={handleDelivery} className="btn-style">Delivered</button>
                         </div>
                     </div>
                     <div className="col-lg-12">
-                        <h3>Restock Item</h3>
-                        <Form className='text-start' onSubmit={handleRestock}>
-                            <Form.Group className="mb-3">
-                                <Form.Label>Product quantity</Form.Label>
-                                <Form.Control type="number" placeholder="Enter product quantity" name="prodQuantity" required/>
-                            </Form.Group>
-                            <button type="submit" className='btn-style'>
-                                Restock
-                            </button>
-                        </Form>
+                        <div className="restock">
+                            <h2>Restock Item</h2>
+                            <Form className='text-start' onSubmit={handleRestock}>
+                                <Form.Group className="mb-3">
+                                    <Form.Label>Product quantity</Form.Label>
+                                    <Form.Control type="number" placeholder="Enter product quantity" name="prodQuantity" required/>
+                                </Form.Group>
+                                <button type="submit" className='btn-style'>
+                                    Restock
+                                </button>
+                            </Form>
+                        </div>
                     </div>
                 </div>
             </div>

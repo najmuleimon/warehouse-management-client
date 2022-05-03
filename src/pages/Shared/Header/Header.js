@@ -5,6 +5,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link, NavLink } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import logo from '../../../images/logo1.png';
+import {CgMenuRound} from 'react-icons/cg';
 import './Header.css';
 
 const Header = () => {
@@ -22,7 +23,7 @@ const Header = () => {
                         <img src={logo} alt="" />
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" >
-                        toggle
+                        <CgMenuRound className='icon'/>
                     </Navbar.Toggle>
                     <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ms-auto">

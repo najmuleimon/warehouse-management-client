@@ -9,16 +9,19 @@ const Footer = () => {
         <footer>
             <div className="container">
                 <div className="row">
-                    <div className="col-md-6">
+                    <div className="col-sm-7">
                         <p>Copyright &copy; All right reserved by Najmul {year}</p>
                     </div>
-                    <div className="col-md-6">
-                        <ul className='d-flex justify-content-end'>
+                    <div className="col-sm-5">
+                        <ul className='d-flex'>
                             <li>
                                 <Link to="/">Home</Link>
                             </li>
                             <li>
-                                <Link to="/inventory">inventory</Link>
+                                <Link to="/blogs">Blogs</Link>
+                            </li>
+                            <li>
+                                <Link to="/login">Login</Link>
                             </li>
                         </ul>
                     </div>

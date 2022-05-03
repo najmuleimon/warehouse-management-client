@@ -1,0 +1,24 @@
+.add-item {
+    padding: 60px 0;
+}
+
+
+.add-item .form-label {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 26px;
+    color: #024d8e;
+}
+
+.add-item .form-control {
+    border-color: #01a9fc;
+    color: #024d8e;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.add-item .form-control::placeholder {
+    font-size: 16px;
+    font-weight: 400;
+    color: #01a9fc;
+}

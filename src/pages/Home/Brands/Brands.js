@@ -11,33 +11,33 @@ const Brands = () => {
     return (
         <div className='brands'>
             <div className="container">
-                <div className="row">
-                    <div className="col-lg-2">
+                <div className="row justify-content-center">
+                    <div className="col-lg-2 col-md-3 col-sm-3 col-6">
                         <div className="item">
                             <img src={brand1} alt="" />
                         </div>
                     </div>
-                    <div className="col-lg-2">
+                    <div className="col-lg-2 col-md-3 col-sm-3 col-6">
                         <div className="item">
                             <img src={brand2} alt="" />
                         </div>
                     </div>
-                    <div className="col-lg-2">
+                    <div className="col-lg-2 col-md-3 col-sm-3 col-6">
                         <div className="item">
                             <img src={brand3} alt="" />
                         </div>
                     </div>
-                    <div className="col-lg-2">
+                    <div className="col-lg-2 col-md-3 col-sm-3 col-6">
                         <div className="item">
                             <img src={brand4} alt="" />
                         </div>
                     </div>
-                    <div className="col-lg-2">
+                    <div className="col-lg-2 col-md-3 col-sm-3 col-6">
                         <div className="item">
                             <img src={brand5} alt="" />
                         </div>
                     </div>
-                    <div className="col-lg-2">
+                    <div className="col-lg-2 col-md-3 col-sm-3 col-6">
                         <div className="item">
                             <img src={brand6} alt="" />
                         </div>

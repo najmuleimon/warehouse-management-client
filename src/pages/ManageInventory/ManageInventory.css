@@ -1,0 +1,38 @@
+.manage-product {
+    padding: 60px 0;
+}
+
+.manage-product .btn-area {
+    position: relative;
+}
+
+.manage-product .btn-area button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 50;
+}
+
+.manage-product table tr th {
+    font-size: 18px;
+    font-weight: 500;
+    color: #024d8e;
+}
+
+.manage-product table tr td {
+    vertical-align: middle;
+    font-size: 16px;
+    color: #222;
+    font-weight: 400;
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+    .manage-product .btn-area button {
+        position: relative;
+    }
+
+    .manage-product .btn-area {
+        justify-content: center !important;
+        margin-bottom: 20px;
+    }
+}

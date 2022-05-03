@@ -14,7 +14,7 @@ const SingleProduct = ({product}) => {
                     <h4>Price: ${price}</h4>
                     <h5>Quantity: {quantity}</h5>
                     <h5>Supplier: {supplier}</h5>
-                    <p className="card-text">{description}</p>
+                    <p className="card-text">{description.length > 200 ?  `${description.slice(0, 200)}...` : description}</p>
                     <button onClick={() => navigate(`/inventory/${_id}`)} className="btn-style">Manage</button>
                 </div>
             </div>

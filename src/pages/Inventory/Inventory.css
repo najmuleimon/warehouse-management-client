@@ -5,3 +5,86 @@
 .single-inventory .image img {
     width: 100%;
 }
+
+.single-inventory h2 {
+    font-size: 26px;
+    font-weight: 600;
+    color: #024d8e;
+}
+
+.single-inventory h3 {
+    font-size: 22px;
+    font-weight: 500;
+    color: #222;
+}
+
+.single-inventory h3 span,
+.single-inventory h4 span,
+.single-inventory p span {
+    color: #024d8e;
+}
+
+.single-inventory h4 {
+    font-size: 20px;
+    font-weight: 500;
+    color: #222;
+}
+
+.single-inventory p span {
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.single-inventory p {
+    font-size: 16px;
+    font-weight: 400;
+    color: #777777;
+    padding: 5px 0 10px;
+}
+
+.single-inventory .btn-area {
+    padding-bottom: 60px;
+}
+
+.single-inventory .restock {
+    padding-top: 60px;
+}
+
+.single-inventory .single button {
+    margin-top: 20px;
+}
+
+.single-inventory .form-label {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 26px;
+    color: #024d8e;
+}
+
+.single-inventory .form-control {
+    border-color: #01a9fc;
+    color: #024d8e;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.single-inventory .form-control::placeholder {
+    font-size: 16px;
+    font-weight: 400;
+    color: #01a9fc;
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+    .single-inventory .image {
+        margin-bottom: 40px;
+    }
+
+    .single-inventory h3,
+    .single-inventory p span {
+        font-size: 20px;
+    }
+
+    .single-inventory h4 {
+        font-size: 18px;
+    }
+}

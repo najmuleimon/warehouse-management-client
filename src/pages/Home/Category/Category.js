@@ -8,8 +8,8 @@ const Category = () => {
     return (
         <div className='category'>
             <div className="container">
-                <div className="row">
-                    <div className="col-md-4">
+                <div className="row justify-content-center">
+                    <div className="col-lg-4 col-md-6">
                         <div className="category-inner">
                             <img src={cat1} alt="" />
                             <div className="content">
@@ -19,7 +19,7 @@ const Category = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="col-md-4">
+                    <div className="col-lg-4 col-md-6">
                         <div className="category-inner">
                             <img src={cat2} alt="" />
                             <div className="content">
@@ -29,7 +29,7 @@ const Category = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="col-md-4">
+                    <div className="col-lg-4 col-md-6">
                         <div className="category-inner">
                             <img src={cat3} alt="" />
                             <div className="content">
