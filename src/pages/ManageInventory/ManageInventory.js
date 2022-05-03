@@ -73,6 +73,7 @@ const ManageInventory = () => {
                                         <th scope="col">Category</th>
                                         <th scope="col">Quantity</th>
                                         <th scope="col">Price</th>
+                                        <th scope="col">Manage</th>
                                         <th scope="col">Update</th>
                                         <th scope="col">Delete</th>
                                     </tr>
@@ -86,7 +87,8 @@ const ManageInventory = () => {
                                         <td>{product.category}</td>
                                         <td>{product.quantity}</td>
                                         <td>{product.price}</td>
-                                        <td><button onClick={() => navigate(`/inventory/${product._id}`)} className='btn btn-info text-white'>Update</button></td>
+                                        <td><button onClick={() => navigate(`/inventory/${product._id}`)} className='btn btn-info text-white'>Manage</button></td>
+                                        <td><button onClick={() => navigate(`/update/${product._id}`)} className='btn btn-primary text-white'>Update</button></td>
                                         <td><button onClick={() => handleDelete(product._id)} className='btn btn-danger'><BsTrash/></button></td>
                                     </tr>)
                                 }
@@ -102,13 +104,6 @@ const ManageInventory = () => {
                                     {number + 1}</button>
                                     )
                             }
-                            
-                            {/* <select onChange={e => setSize(e.target.value)}>
-                                <option value="5">5</option>
-                                <option value="10" selected>10</option>
-                                <option value="15">15</option>
-                                <option value="20">20</option>
-                            </select> */}
                         </div>
                     </div>
                 </div>

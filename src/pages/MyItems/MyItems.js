@@ -30,7 +30,7 @@ const MyItems = () => {
                 setMyProducts(data);
             }
             catch(error){
-                if(error.response.status === 401 || error.response.status === 403){
+                if(error?.response.status === 401 || error?.response.status === 403){
                     signOut(auth);
                     navigate('/login');
                     toast.error("Access Denied!",{
@@ -84,6 +84,7 @@ const MyItems = () => {
                                         <th scope="col">Category</th>
                                         <th scope="col">Quantity</th>
                                         <th scope="col">Price</th>
+                                        <th scope="col">Manage</th>
                                         <th scope="col">Update</th>
                                         <th scope="col">Delete</th>
                                     </tr>
@@ -97,7 +98,8 @@ const MyItems = () => {
                                         <td>{product.category}</td>
                                         <td>{product.quantity}</td>
                                         <td>{product.price}</td>
-                                        <td><button onClick={() => navigate(`/inventory/${product._id}`)} className='btn btn-info text-white'>Update</button></td>
+                                        <td><button onClick={() => navigate(`/inventory/${product._id}`)} className='btn btn-info text-white'>Manage</button></td>
+                                        <td><button onClick={() => navigate(`/update/${product._id}`)} className='btn btn-primary text-white'>Update</button></td>
                                         <td><button onClick={() => handleDelete(product._id)} className='btn btn-danger'><BsTrash/></button></td>
                                     </tr>)
                                 }
