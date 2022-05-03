@@ -132,9 +132,11 @@ const Login = () => {
                             </Form>
                             {errors?.general && <p className='error-msg'>{errors.general}</p>}
 
-                            <button className='forget-pass' onClick={handleForgetPass}>Forget Password?</button>
-                            <p className='agree'>New to Pro Tech? <Link to="/signup">Create New Account</Link></p>
-                            <SocialLogin/>
+                            <button className='forget-pass mt-3' onClick={handleForgetPass}>Forget Password?</button>
+                            <p className='agree mt-3'>New to Pro Tech? <Link to="/signup">Create New Account</Link></p>
+                            <div className="social-login mt-3">
+                                <SocialLogin/>
+                            </div>
                         </div>
                     </div>
                 </div>

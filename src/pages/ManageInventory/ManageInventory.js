@@ -1,18 +1,35 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
-import useAllProducts from '../../hooks/useAllProducts';
 import {BsTrash} from 'react-icons/bs';
 import {BiAddToQueue} from 'react-icons/bi';
 import './ManageInventory.css';
 
 const ManageInventory = () => {
-    const [allProducts, setAllProducts] = useAllProducts();
+    const [allProducts, setAllProducts] = useState([]);
+    const [pages, setPages] = useState(0);
+    const [currentPage, setCurrentPage] = useState(0);
     const [user] = useAuthState(auth);
     const navigate = useNavigate();
     let count = 1;
+
+    useEffect(() => {
+        fetch(`http://localhost:5000/all-products?page=${currentPage}&size=10`)
+        .then(res => res.json())
+        .then(data => setAllProducts(data))
+    }, [currentPage])
+
+    useEffect( () =>{
+        fetch('http://localhost:5000/productCount')
+        .then(res => res.json())
+        .then(data =>{
+            const count = data.count;
+            const pages = Math.ceil(count/10);
+            setPages(pages);
+        })
+    }, [])
 
     const handleDelete = id => {
         const proceed = window.confirm('Are you sure?');
@@ -75,6 +92,23 @@ const ManageInventory = () => {
                                 }
                                 </tbody>
                             </table>
+                        </div>
+                    </div>
+                    <div className="col-lg-12">
+                        <div className='pagination'>
+                            {
+                                [...Array(pages).keys()]
+                                .map(number => <button key={number} className={currentPage === number ? 'selected': ''} onClick={() => setCurrentPage(number)}>
+                                    {number + 1}</button>
+                                    )
+                            }
+                            
+                            {/* <select onChange={e => setSize(e.target.value)}>
+                                <option value="5">5</option>
+                                <option value="10" selected>10</option>
+                                <option value="15">15</option>
+                                <option value="20">20</option>
+                            </select> */}
                         </div>
                     </div>
                 </div>

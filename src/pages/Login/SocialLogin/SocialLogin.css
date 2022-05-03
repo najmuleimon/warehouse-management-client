@@ -1,0 +1,22 @@
+.google-btn {
+    font-size: 16px;
+    font-weight: 500;
+    color: #024d8e;
+    padding: 10px 20px;
+    display: inline-block;
+    border: 1px solid #024d8e;
+    outline: none;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    background-color: transparent;
+}
+
+.google-btn img {
+    margin-right: 20px;
+}

@@ -42,7 +42,7 @@ const AddItem = () => {
                 <div className="row">
                     <div className="col-lg-12">
                         <div className="title">
-                            <h2>Add New Product</h2>
+                            <h2>Add Inventory</h2>
                         </div>
                         <Form className='text-start' onSubmit={handleAddProduct}>
                             <Form.Group className="mb-3">

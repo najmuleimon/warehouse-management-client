@@ -1,0 +1,23 @@
+.not-found {
+    padding: 60px 0;
+    min-height: calc(100vh - 124px);
+}
+
+.not-found h2 {
+    font-size: 26px;
+    font-weight: 500;
+    line-height: 38px;
+    color: #024d8e;
+}
+
+.not-found button {
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+    .not-found img {
+        width: 100%;
+    }
+}

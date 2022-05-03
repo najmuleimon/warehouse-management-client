@@ -144,8 +144,10 @@ const Register = () => {
                             </Form>
                             {errors?.general && <p className='error-msg'>{errors.general}</p>}
 
-                            <p className='agree'>Already have an account? <Link to="/login">Login</Link></p>
-                            <SocialLogin/>
+                            <p className='agree pt-3'>Already have an account? <Link to="/login">Login</Link></p>
+                            <div className="social-login mt-3">
+                                <SocialLogin/>
+                            </div>
                         </div>
                     </div>
                 </div>

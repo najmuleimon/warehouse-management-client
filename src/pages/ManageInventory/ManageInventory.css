@@ -1,5 +1,6 @@
 .manage-product {
     padding: 60px 0;
+    min-height: calc(100vh - 124px);
 }
 
 .manage-product .btn-area {
@@ -13,6 +14,10 @@
     z-index: 50;
 }
 
+.manage-product .table {
+    margin-bottom: 0;
+}
+
 .manage-product table tr th {
     font-size: 18px;
     font-weight: 500;
@@ -24,6 +29,40 @@
     font-size: 16px;
     color: #222;
     font-weight: 400;
+}
+
+.manage-product table tr td:nth-child(2),
+.manage-product table tr td:nth-child(3) {
+    min-width: 300px;
+}
+
+.manage-product .pagination {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.manage-product .pagination button {
+    height: 30px;
+    width: 30px;
+    background-color: #01a9fc;
+    color: #fff;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+    line-height: 30px;
+    font-size: 14px;
+    font-weight: 500;
+    outline: none;
+    border: 0;
+    margin: 0 3px;
+}
+
+.manage-product .pagination button.selected {
+    background-color: #024d8e;
 }
 
 @media (min-width: 320px) and (max-width: 767px) {

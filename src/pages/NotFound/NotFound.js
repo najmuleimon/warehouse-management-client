@@ -12,7 +12,7 @@ const NotFound = () => {
                     <div className="col-lg-12">
                         <div className="content text-center">
                             <img src={notFound} alt="" />
-                            <h2>Sorry! We can not find your request</h2>
+                            <h2>Sorry! We can not find your request.</h2>
                             <button onClick={() => navigate('/')} className="btn-style">Go back Home</button>
                         </div>
                     </div>
