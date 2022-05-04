@@ -1,5 +1,6 @@
 .single-inventory {
     padding: 60px 0;
+    min-height: calc(100vh - 124px);
 }
 
 .single-inventory .image img {

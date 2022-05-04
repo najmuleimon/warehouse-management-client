@@ -1,6 +1,6 @@
 # Pro Tech Electronics Warehouse Website
 
-Live Preview link: ().
+Live Preview link: https://warehouse-20bde.web.app/
 
 ## Features and Functionality of this Project
  - This website is about multiple items electronics warehouse management.
