@@ -21,7 +21,7 @@ const SocialLogin = () => {
     useEffect(() => {
         if(user){
             const email = user.email;
-            axios.post('http://localhost:5000/login', {email})
+            axios.post('https://hidden-cliffs-98459.herokuapp.com/login', {email})
             .then(data => {
                 localStorage.setItem('accessToken', data.data.accessToken);
                 navigate(from, { replace: true });

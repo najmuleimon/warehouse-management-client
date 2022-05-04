@@ -16,7 +16,7 @@ const Inventory = () => {
         let newQuantity = quantity - 1;
         setProduct({...product, quantity: newQuantity})
 
-        const url = `http://localhost:5000/product/${id}`;
+        const url = `https://hidden-cliffs-98459.herokuapp.com/product/${id}`;
         fetch(url, {
             method: 'PUT',
             headers: {
@@ -38,7 +38,7 @@ const Inventory = () => {
         let newQuantity = quantity + givenQuantity;
         setProduct({...product, quantity: newQuantity})
         
-        const url = `http://localhost:5000/product/${id}`;
+        const url = `https://hidden-cliffs-98459.herokuapp.com/product/${id}`;
         console.log(url);
         fetch(url, {
             method: 'PUT',

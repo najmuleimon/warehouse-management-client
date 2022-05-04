@@ -16,13 +16,13 @@ const ManageInventory = () => {
     let count = 1;
 
     useEffect(() => {
-        fetch(`http://localhost:5000/all-products?page=${currentPage}&size=10`)
+        fetch(`https://hidden-cliffs-98459.herokuapp.com/all-products?page=${currentPage}&size=10`)
         .then(res => res.json())
         .then(data => setAllProducts(data))
     }, [currentPage])
 
     useEffect( () =>{
-        fetch('http://localhost:5000/productCount')
+        fetch('https://hidden-cliffs-98459.herokuapp.com/productCount')
         .then(res => res.json())
         .then(data =>{
             const count = data.count;
@@ -35,7 +35,7 @@ const ManageInventory = () => {
         const proceed = window.confirm('Are you sure?');
         const email = user.email;
         if(proceed){
-            const url = `http://localhost:5000/product/${id}?email=${email}`;
+            const url = `https://hidden-cliffs-98459.herokuapp.com/product/${id}?email=${email}`;
             fetch(url, {
                 method: 'DELETE'
             })

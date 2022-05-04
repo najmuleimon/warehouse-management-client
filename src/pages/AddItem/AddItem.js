@@ -24,7 +24,7 @@ const AddItem = () => {
         }
 
         
-        const url = "http://localhost:5000/upload/";
+        const url = "https://hidden-cliffs-98459.herokuapp.com/upload/";
         axios.post(url, product)
         .then(response =>{
             const {data} = response;

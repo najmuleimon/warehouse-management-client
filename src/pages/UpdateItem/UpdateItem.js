@@ -73,7 +73,7 @@ const UpdateItem = () => {
         }
 
         
-        const url = `http://localhost:5000/update/${id}`;
+        const url = `https://hidden-cliffs-98459.herokuapp.com/update/${id}`;
         axios.put(url, product)
         .then(response =>{
             const {data} = response;
