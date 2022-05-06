@@ -75,6 +75,10 @@
     color: #01a9fc;
 }
 
+.single-inventory .btn-style:disabled {
+    background-color: grey;
+}
+
 @media (min-width: 320px) and (max-width: 767px) {
     .single-inventory .image {
         margin-bottom: 40px;

@@ -11,23 +11,25 @@ const Inventory = () => {
 
     // handle deliver item
     const handleDelivery = () => {
-        console.log(product.quantity);
         let quantity = JSON.parse(product.quantity);
-        let newQuantity = quantity - 1;
-        setProduct({...product, quantity: newQuantity})
+        let newQuantity
+        if(quantity > 0){
+            newQuantity = quantity - 1;
+            setProduct({...product, quantity: newQuantity});
 
-        const url = `https://hidden-cliffs-98459.herokuapp.com/product/${id}`;
-        fetch(url, {
-            method: 'PUT',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify({quantity: newQuantity})
-        })
-        .then(res=> res.json())
-        .then(data =>{
-            console.log(data);
-        });
+            const url = `https://hidden-cliffs-98459.herokuapp.com/product/${id}`;
+            fetch(url, {
+                method: 'PUT',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify({quantity: newQuantity})
+            })
+            .then(res=> res.json())
+            .then(data =>{
+                console.log(data);
+            });
+        }
     }
 
     // handle restock item
@@ -77,7 +79,7 @@ const Inventory = () => {
                             <h4><span>Supplier:</span> {product.supplier}</h4>
                             <h4><span>Quantity:</span> {product.quantity}</h4>
                             <h4>{product.quantity > 0 ? "on sale" : "sold"}</h4>
-                            <button onClick={handleDelivery} className="btn-style">Delivered</button>
+                            <button onClick={handleDelivery} className="btn-style" disabled={product.quantity <= 0 ? true : false}>Delivered</button>
                         </div>
                     </div>
                     <div className="col-lg-12">
